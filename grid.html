@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .layout div{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            border:1px solid black;
+            background-color:aquamarine;
+            font-size: 2rem;
+        }
+        .layout
+        {
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-template-rows: 10vh 80vh 10vh;
+            grid-template-areas:
+            "h h h h h" 
+            "sb1 c  c c sb2"
+            "f f f f f";
+        }
+        .header{
+            grid-area: h;
+            font-family:cursive;
+            background-color: white;
+            
+        }
+        .sb1{
+            grid-area: sb1;
+        }
+        .content{
+            grid-area: c;
+            background-image:;
+        }
+        .sb2{
+            grid-area: sb2;
+        }
+        .footer{
+            grid-area: f;
+        }
+        img{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+    <div class="header"><marquee>Car <img src="cartoon.jpg"></marquee></div>
+    <div class="sb1">dropdown</div>
+    <div class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum nisi aliquid voluptatem dignissimos cum deleniti et ut? Natus animi dolore ab velit eius facilis unde molestias. Magni quas tenetur illo esse illum itaque ipsum, tempore optio quos dolore consequuntur? Hic officia distinctio quidem enim consequatur provident molestias totam aut vel.</div>
+    <div class="sb2">Sidebar</div>
+    <div class="footer">Address</div>
+</div>
+</body>
+</html>

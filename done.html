@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Flex direction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Flex box</title>
+    <script src="login credentials.js">
+    </script>
+</head>
+<body onload="setTimeout( view_json_live(),1000);">
+    <div class="harish">
+     <header class="head">
+        <div class="main">
+            <div class="main2">
+                <div class="one">
+                <img src="image/EV-removebg.png" id="img">
+            </div>
+        </div>
+            <div class="main1">
+        <div class="box"><a href="#">Home</a></div>
+        <div class="box"><a href="#">Services</a></div>
+        <div class="box"><a href="#">Contact us</a></div>
+        <div class="box"><a href="#">Products</a></div>
+        <div class="box"><a href="#">Info</a></div>
+    </div>
+        </div>
+        <div class="main3">
+           <marquee scrollamount="20" behavior="scroll" direction="right" margin-top="10px"><span id="mark"></span></marquee>
+        </div>
+     </header>
+     <div class="second">
+        <div class="forte">
+            <img src="image/IMG_1134-removebg-preview.png" alt="forte" id="forte">
+        </div>
+        <div class="registration">
+           <div class="field">
+               <form class="form"  id="form">
+               <fieldset id="field"><br>
+                   <div class="form-control">
+                  <label class="cl">Username</label>
+                  <input type="text" placeholder="Username" id="username">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i><br><br>
+                  <small>Error message</small>
+               </div>
+                  <div class="form-control">
+                  <label class="cl">Password</label>
+                  <input type="password" placeholder="Password" id="password">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i><br><br>
+                  <small>Error message</small>
+               </div>
+                  <div class="an"><a href="#">Forgot password</a></div><br><br>
+                  <div class="butt"><button id="butt" type="submit" onsubmit="insert()">Submit</button></div><br><p id="or">or</p><br>
+                  <div class="create">
+                   <button id="create"><a href="Second page.html" id="second2">Create new account</a></button>
+                  </div>
+               <legend align="center" id="legend">Log-in</legend><br>
+           </fieldset>
+       </form>
+           </div>
+        </div>
+        <div class="table">
+           <table align="center" id="table">
+               <tr align="center" id="first">
+                   <th>MODEL OF THE VEHICLE</th>
+                   <th>EX-SHOWROOM PRICE</th>
+               </tr>
+               <tr align="center" id="second">
+                   <td>OLA S1</td>
+                   <td>99,999</td>
+               </tr>
+               <tr align="center" id="third">
+                   <td>OLA S1 Pro</td>
+                   <td>1,39,999</td>
+               </tr>
+               <tr align="center" id="fourth">
+                   <td>FORTE V72</td>
+                   <td>98,825</td>
+               </tr>
+               <tr align="center" id="fifth">
+                   <td>Prana Grand</td>
+                   <td>2,25,000</td>
+               </tr>
+           </table>
+        </div>
+        </div>
+        <h1 style="text-align:center;" id="msg">Message Shown Here!</h1>
+
+    <br>
+    <br>
+
+    <h2 style="text-align:center;" id="jso_str"></h2>
+    </div>
+    <style>*{
+        padding: 0;
+        margin:0;
+        box-sizing: border-box;
+       text-decoration: none;
+    }
+    
+    .main{
+        position:relative;
+        width:100%;
+        height:120px;
+        display: flex;
+        background-color: black;
+        align-content: space-between;
+    }
+    
+    .main1{
+        width:100%;
+        height:120px;
+        display: flex;
+        flex-direction: row;
+        left: 500px;
+    }
+    .head{
+        width: 100%;
+        height: 180px;
+    }
+    /*.img{
+        display: flex;
+        width: 200px;
+        height: 150px;
+        border-style: dashed;
+    }*/
+    .main2{
+        display: flex;
+        width: 200px;
+        height: 150px;
+        flex-direction: row;  
+    }
+    .main3{
+        width: 100%;
+        height:150px;
+        position: absolute;
+        top:112px;
+        color:red;
+        background-color:yellow;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+    }
+    #mark{
+        margin-top:35px;
+       animation:blink 3s linear infinite;
+       color: #0e3742;
+       -webkit-box-reflect: below 1px linear gradient(transparent, #0004);
+       outline: none;
+    }
+    @keyframes blink{
+    0%,18%,25%{
+        color:#0e3742;
+        text-shadow: none;
+        opacity: 0.5;
+        box-shadow: none;
+    }
+    75%,85%,90%,100%{
+        color:#fff;
+        opacity: 0.4px;
+        text-shadow: 0 0 10px #03bcf4,
+                     0 0 20px #03bcf4,
+                     0 0 40px #03bcf4,
+                     0 0 80px #03bcf4,
+                     0 0 160px #03bcf4;
+    }
+    
+    }
+    .one{
+        width: 200px;
+        height: 120px; 
+    }
+    #img{
+        width:300px;
+        height: 120px;
+    }
+    .box{
+        position: relative;
+        width: 110px;
+        height: 120px;
+        color: white;
+        font-weight: bolder;
+        padding-top:50px;
+        padding-left: 25px;
+        left:780px;
+    }
+    .box:nth-of-type(even) a{
+        color: white;
+    }
+    .box:nth-last-of-type(odd) a{
+        color: black;
+        font-weight: bolder;
+    }
+    .box:nth-of-type(odd){
+        background-color: greenyellow;
+    }
+    .second{
+        position: relative;
+        width:100%;
+        height: 1500px;
+    }
+    .forte{
+        position:absolute;
+        width:100%;
+        height:500px;
+    }
+    #forte{
+        width:100%;
+        height:1000px;
+    border-radius: 0% 0% 30% 30%;
+    }
+    .field{
+        position:absolute;
+        width:700px;
+        height: 800px;
+        top:1100px;
+        left:200px;
+    }
+    #field{
+        width:500px;
+        height:350px;
+        border-radius: 0% 0% 50% 20%;
+        background: hsla(84, 90%, 70%, 1);
+        border-style: ridge;
+        border: 5px solid aqua;
+    }
+    #legend{
+        width:300px;
+        font-size: 30px;
+      background-color: black;
+      color:greenyellow;
+    }
+    #butt{
+        padding:10px;
+        background: black;
+        transform: skew(10deg);
+     color: white;
+     font-size: 15px;
+    }
+    #butt a{
+        color: greenyellow;
+    }
+    .form{
+        padding: 30px 40px;
+    }
+    .cl{
+        margin: 10px;
+        font-size: 25px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .an{
+        padding: 10px;
+        font-size: 20px;
+    }
+    .butt{
+        padding: 10px;
+        margin-left: 160px;
+       margin-top: -50px;
+        color: greenyellow;
+    }
+    #username{
+        padding: 5px;
+        margin-left: 13px;
+    }
+    #password{
+        padding: 5px;
+        margin-left: 20px;
+    }
+    .table{
+        position:relative;
+        width:500px;
+        height: 500px;
+        top:1120px;
+        left:900px;
+    }
+    #table{
+        border-collapse: collapse;
+    }
+    #first{
+        background: greenyellow;
+        font-size: 18px;
+    }
+    #second{
+        background: hsla(84, 50%, 90%, 1);
+    }
+    #third{
+        background: greenyellow;
+    }
+    #fourth{
+        background: hsla(84, 50%, 90%, 1);
+    }
+    #fifth{
+        background: greenyellow;
+    }
+    th,td{
+        padding: 15px;
+    }
+    .form{
+        width: 200px;
+        height:200px;
+    }
+    #butt:hover{
+    
+    }
+    #create{
+        padding: 7px;
+        background: black;
+        color: greenyellow;
+        font-size: 18px;
+    }
+    .create{
+        position: absolute;
+        top:300px;
+        left:120px;
+    }
+    #or{
+        margin-left:200px;
+        margin-top: -30px;
+        font-size: 30px;
+        font-weight: bolder;
+    }
+    #second2{
+        color:greenyellow;
+        background: black;
+    }
+    .form-control{
+        position: relative;
+    }
+    .form-control label{
+        display: inline-block;
+    }
+    .form-control input{
+        border-color:greenyellow;
+        border-radius: 5px;
+    }
+    .form-control input:focus{
+        outline:none;
+        border-color:black;
+    }
+    .form-control.success input{
+    border-color: #2ecc71;
+    }
+    .form-control.error input{
+        border-color:red;
+        }
+    .form-control i{
+        visibility: hidden;
+    position: absolute;
+    top:20px;
+    }
+    
+    .form-control.success i.fa-check-circle{
+      color:#2ecc71;
+      visibility: visible;
+    }
+    .form-control.error i.fa-exclamation-circle{
+        color:red;
+        visibility: visible;
+      }
+    .form-control small {
+        color: red;
+        position: absolute;
+     left: 150px;
+     top: 0px;
+     visibility: hidden;
+      }
+      .form-control.error small{
+        visibility: visible;
+      }</style>
+        <script>
+            const time=setTimeout(Message,4000) 
+            function Message(){
+              document.getElementById('mark').innerHTML="Get offer upto 50%"
+            }
+
+        const form=document.getElementById("form");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    
+    form.addEventListener('submit',e =>{
+       e.preventDefault();
+       checkInput();
+    });
+    function checkInput(){
+        const usernamevalue=username.value.trim();
+        const passwordvalue=password.value.trim();
+    
+    if(usernamevalue === ''){
+    setError(username, 'Username Cannot be blank');
+    }
+    else{
+        setSuccess(username);
+    }
+    
+    if(passwordvalue === ''){
+        setError(password, 'Password Cannot be blank')
+    }
+    else{
+        setSuccess(password);
+    }
+    }
+    function setError(input,message){
+        const formControl=input.parentElement;
+        const small=formControl.querySelector('small');
+        formControl.className='form-control error';
+        small.innerText=message;
+    }
+    function setSuccess(input){
+        const formControl=input.parentElement;
+        formControl.className='form-control success';
+    }
+    function alert(password,username){
+        alert("Successfully logged-in");
+    }
+         </script>
+         </body>
+         </html>

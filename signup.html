@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="form-container sign-in-container">
+               <div class="order">
+        <h2>Signup</h2>
+        <form role="form" onsubmit="signUp(event);" autocomplete="off">
+            <div class="form-group">
+                <input type="text" name="fname" id="fname" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="pwd" id="pwd" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">sign Up</button>
+            </div>
+        </form>
+
+        <p>Have an account! <a href="./login.html">Login</a></p>
+    </div>
+</div>
+</div>
+    </main>
+    <script>
+        
+    const signUp = e => {   
+        
+        let fname = document.getElementById('fname').value,
+            lname = document.getElementById('lname').value,
+            email = document.getElementById('email').value,
+            pwd = document.getElementById('pwd').value;
+            
+        
+        let formData = JSON.parse(localStorage.getItem('formData')) ||  [];
+    
+        let exist = formData.length &&
+            JSON.parse(localStorage.getItem('formData')).some(data =>
+                 data.fname.toLowerCase() == fname.toLowerCase() &&
+                 data.lname.toLowerCase() == lname.toLowerCase()
+                );
+    
+        if(!exist){
+            formData.push({fname,lname,email,pwd});
+            localStorage.setItem('formData',JSON.stringify(formData));
+            document.querySelector('form').reset();
+            document.getElementById('fname').focus();
+            alert("Account Created.\n\nPlesae Sign In using the link below.");
+        }
+        else{
+            alert("Ooopsss....Duplicate found!!!\n You have alerady signed up");
+        }
+        e.preventDefault();
+    }
+    </script>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    body{
+        background-color: #f6f5f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    .container{
+        background-color: #fff;
+        border-radius: 10px;
+        width: 384px;
+        max-width: 100%;
+        min-height: 480px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 14px 28px rgba(0,0,0,.25),
+        0px 10px 10px rgba(0,0,0,.25);
+    }
+    .form-container{
+        position: absolute;
+        top: 0%;
+        height: 100%;
+    }
+     .order{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 100px;
+        height: 100%;
+        text-align: center;
+     }
+    h2{
+        font-weight: bold;
+        margin: 0;
+        color: #ff4828;
+    }
+    p{
+        font-size: 16px;
+        padding-top: 15px;
+    }
+    input{
+        background-color: #eee;
+        border: none;
+        text-decoration: none;
+        margin: 8px 0;
+        padding: 12px 15px;
+        width: 120%;
+    }
+    button{
+        border-radius: 20px;
+        border: 1px solid #ff4828;
+        background-color: #ff4828;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    .form-group{
+        padding: 7px;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(23, 166, 255);
+    }
+    </style>
+</body>
+</html>
